@@ -14,19 +14,6 @@ class FormBookingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Lista de tarjetas simuladas
-    final List<HotelCard> hotelCards = List.generate(5, (index) {
-      return HotelCard(
-        hotelName: 'Hotel ${index + 1}',
-        imagePath: 'assets/images/H6.png',
-        price: 40 + index * 5,
-        totalPrice: 45 + index * 5,
-        ratingLabel: 'Great Stay!',
-        refundPolicy: 'Non refundable',
-        isRated: index % 2 == 0,
-      );
-    });
-
     return Scaffold(
       drawer: const CustomDrawer(),
       appBar: const CustomBarSearch(),

@@ -45,6 +45,7 @@ dev_dependencies:
 
   flutter_native_splash: ^2.3.10
   flutter_datetime_picker_plus: ^2.0.1
+  flutter_launcher_icons: ^0.13.1
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -114,6 +115,15 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 flutter_native_splash:
   color: "#ffffff" # Fondo blanco
-  image: assets/images/yaio.png
+  image: assets/images/logo.png
   android: true
   ios: true
+  fullscreen: true # ✅ Hace que no haya barra de estado
+  android_gravity: center # ✅ Centra el logo
+
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/yaio.png"  # Cambia la ruta según tu ícono

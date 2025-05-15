@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../widgets/back_button.dart';
 import '../widgets/bar_search.dart';
 import '../widgets/booking_summary.dart';
-import '../widgets/card_hotel.dart';
 import '../widgets/date_location.dart';
 import '../widgets/drawer.dart';
 import '../widgets/footer.dart';
@@ -59,17 +58,6 @@ class _RoomsPageState extends State<RoomsPage> {
 
   @override
   Widget build(BuildContext context) {
-    final List<HotelCard> hotelCards = List.generate(5, (index) {
-      return HotelCard(
-        hotelName: 'Hotel ${index + 1}',
-        imagePath: 'assets/images/H6.png',
-        price: 40 + index * 5,
-        totalPrice: 45 + index * 5,
-        ratingLabel: 'Great Stay!',
-        refundPolicy: 'Non refundable',
-        isRated: index % 2 == 0,
-      );
-    });
 
     return Scaffold(
       drawer: const CustomDrawer(),
@@ -99,7 +87,6 @@ class _RoomsPageState extends State<RoomsPage> {
             DateAndLocationSelector(
               location: 'Cancún',
               onLocationPressed: () {
-                print('Location button pressed');
               },
             ),
             //Numero de Rooms
@@ -107,7 +94,7 @@ class _RoomsPageState extends State<RoomsPage> {
             RoomSelectorButton(
               roomsCount: 1,
               onPressed: () {
-                print('Pressed Room Selector');
+               
               },
             ),
             //Contenedor de Tarjetas de Rooms
@@ -146,6 +133,7 @@ class _RoomsPageState extends State<RoomsPage> {
           shape: BoxShape.circle,
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.black.withOpacity(0.2),
               blurRadius: 6,
               offset: const Offset(0, 2),

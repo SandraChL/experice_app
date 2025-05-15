@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import '../screens/confirmation_screen.dart';
 import '../utils/colors.dart';
+import 'important_recommendations.dart';
 
 class BookingForm extends StatefulWidget {
   const BookingForm({super.key});
@@ -88,6 +90,7 @@ class _BookingFormState extends State<BookingForm> {
             ),
           ),
           if (showPaymentSection) _buildPaymentSection(),
+          const SizedBox(height: 20),
         ],
       ),
     );
@@ -99,11 +102,6 @@ class _BookingFormState extends State<BookingForm> {
       const SizedBox(height: 30),
       _buildSectionHeader('2. Complete your booking'),
       const SizedBox(height: 20),
-      _buildTextLabel('Promo code'),
-      _buildInputField('Enter it below'),
-      _buildTextLabel('Reference Code'),
-      _buildInputField('Enter it below'),
-      const SizedBox(height: 30),
       _buildTextLabel('Email'),
       _buildRoundedField('Email address'),
       _buildTextLabel('Card number'),
@@ -198,7 +196,7 @@ class _BookingFormState extends State<BookingForm> {
         ],
       ),
       const SizedBox(height: 30),
-      _buildSectionHeader('3. Detalles de la reserva'),
+      _buildSectionHeader('3. Reservation details'),
       const SizedBox(height: 16),
       Container(
         padding: const EdgeInsets.all(16),
@@ -207,6 +205,7 @@ class _BookingFormState extends State<BookingForm> {
           borderRadius: BorderRadius.circular(12),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.grey.withOpacity(0.2),
               blurRadius: 6,
               offset: const Offset(0, 3),
@@ -217,7 +216,7 @@ class _BookingFormState extends State<BookingForm> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const [
             Text(
-              'Reservation details',
+              'Cancellation Policy',
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10),
@@ -264,7 +263,12 @@ class _BookingFormState extends State<BookingForm> {
       Center(
         child: ElevatedButton(
           onPressed: () {
-            // Acción para finalizar reserva
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ConfirmationPage(city: 'Cancún'),
+              ),
+            );
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.btnoranges,
@@ -278,43 +282,7 @@ class _BookingFormState extends State<BookingForm> {
         ),
       ),
       const SizedBox(height: 20),
-      const Text(
-        'Important Recommendations:',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      const SizedBox(height: 8),
-      BulletText(
-        'The reservation holder must be present at check-in. A valid ID and a credit card are required.',
-      ),
-      BulletText(
-        'The guest must notify the hotel if the check-in time will be later than the one scheduled in the reservation, to avoid cancellation of the reservation.',
-      ),
-      const SizedBox(height: 24),
-      const Text(
-        'Important Notes:',
-        style: TextStyle(fontWeight: FontWeight.bold),
-      ),
-      const SizedBox(height: 10),
-      const NumberedText(
-        '1.1 The primary guest on the booking confirmation must be present at check-in and is expected to present the booking confirmation, a valid credit card and government-issued identification.',
-      ),
-      const SizedBox(height: 6),
-      const NumberedText(
-        '1.2 At least one of the guests on the reservation must be over 21 years of age or accompanied by a close family member who is able and willing to assume full responsibility in the event of damage to the property.',
-      ),
-      const SizedBox(height: 6),
-      const NumberedText(
-        '1.3 Maximum capacity is strictly controlled by the hotel at check-in.',
-      ),
-      const SizedBox(height: 6),
-      const NumberedText(
-        '1.4 The hotel reserves the right to assign a different room of the same capacity. Hotel services are subject to change and we assume no liability for such changes.',
-      ),
-      const SizedBox(height: 6),
-      const NumberedText(
-        '1.5 Some hotels may have additional charges for the use of certain services and facilities. Such charges are determined and collected at the hotel.',
-      ),
-        const SizedBox(height: 30),
+      const HotelImportantInfoSection(),
     ],
   );
 
