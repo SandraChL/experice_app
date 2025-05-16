@@ -26,7 +26,7 @@ class _BookingSummaryCardState extends State<BookingSummaryCard> {
 
   final ScrollController _roomScrollController = ScrollController();
 
-  List<Map<String, dynamic>> _rooms = [
+  final List<Map<String, dynamic>> _rooms = [
     {'adults': 2, 'children': 0, 'childAges': <int>[]},
   ];
 
@@ -102,6 +102,7 @@ class _BookingSummaryCardState extends State<BookingSummaryCard> {
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.05),
             blurRadius: 6,
             offset: const Offset(0, 2),

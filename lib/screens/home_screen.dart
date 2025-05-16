@@ -19,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  String selected = 'Eventos';
+  String selected = 'Accomodation';
 
   @override
   Widget build(BuildContext context) {
@@ -39,26 +39,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       CustomToggleButton(
-                        label: 'Eventos',
-                        isSelected: selected == 'Eventos',
+                        label: 'Events',
+                        isSelected: selected == 'Events',
                         onTap: () {
                           setState(() {
-                            selected = 'Eventos';
+                            selected = 'Events';
                           });
                         },
                       ),
                       const SizedBox(width: 10),
                       CustomToggleButton(
-                        label: 'Alojamiento',
-                        isSelected: selected == 'Alojamiento',
+                        label: 'Accomodation',
+                        isSelected: selected == 'Accomodation',
                         onTap: () {
                           setState(() {
-                            selected = 'Alojamiento';
+                            selected = 'Accomodation';
                           });
                         },
                       ),
                     ],
                   ),
+
                   const SizedBox(height: 20),
                   //Banner
                   const HotelSearchBanner(),

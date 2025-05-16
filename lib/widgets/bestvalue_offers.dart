@@ -57,7 +57,7 @@ class BestValueOffers extends StatelessWidget {
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );

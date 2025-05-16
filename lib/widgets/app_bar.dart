@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../screens/home_screen.dart';
+//import '../screens/home_screen.dart';
+import '../screens/login.dart';
 import 'currency_selector_button.dart';
 import 'language_selector_button.dart';
 
@@ -29,7 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => HomeScreen()),
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
                   child: Image.asset(
