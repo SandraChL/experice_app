@@ -89,7 +89,7 @@ class ExclusiveDeals extends StatelessWidget {
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );

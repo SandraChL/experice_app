@@ -6,7 +6,7 @@ import '../widgets/footer.dart';
 import '../widgets/hotel_confirmation.dart';
 import '../widgets/important_recommendations.dart';
 import '../widgets/payment_amount.dart';
-import '../widgets/reserv_detail.dart';
+
 
 class ConfirmationPage extends StatelessWidget {
   final String city;
